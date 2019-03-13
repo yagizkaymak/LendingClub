@@ -119,7 +119,13 @@ The project uses Python 3.7.2, Pandas 0.24.1, and PostgresSQL 11.2.
 
 # Data Pipeline
 <a id="data_pipeline"></a>
-The data pipeline consists of the input file (__loan.csv__) that is located in **input** folder, Python programming language for data cleaning and validation, and PostgresSQL to stored the cleaned and validated data.
+The data pipeline accepts a csv file that contains raw data to be cleaned and validated as the input.
+
+ Python programming language is to perform data cleaning and validation.
+
+ Processed data is stored in PostgresSQL.
+
+ The overview of the data pipeline is visualized in the following figure
 
 <img src='images/pipeline.png' width='800' alt='pipeline'>
 
