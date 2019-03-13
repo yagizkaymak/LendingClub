@@ -139,7 +139,7 @@ The data is first read from the input **csv** file and loaded into a Pandas data
 ## Future Work
 <a id="futurework"></a>
 Test cases have not been implemented. Test modules will be implemented.
-In addition to the existing data validation in the project, data validation tools, such as Valideer (https://github.com/podio/valideer), Cerberus (http://docs.python-cerberus.org/en/stable/), or Voluptuous (https://github.com/alecthomas/voluptuous).
+In addition to the existing data validation in the project, data validation tools, such as Valideer (https://github.com/podio/valideer), Cerberus (http://docs.python-cerberus.org/en/stable/), or Voluptuous (https://github.com/alecthomas/voluptuous), can be also used.
 
 ## Possible Improvements
 <a id="improvements"></a>
