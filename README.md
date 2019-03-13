@@ -121,7 +121,7 @@ The project uses Python 3.7.2, Pandas 0.24.1, and PostgresSQL 11.2.
 <a id="data_pipeline"></a>
 The data pipeline accepts a csv file that contains raw data to be cleaned and validated as the input.
 
- Python programming language is to perform data cleaning and validation.
+ Python programming language is used to perform data cleaning and validation.
 
  Processed data is stored in PostgresSQL.
 
@@ -129,13 +129,13 @@ The data pipeline accepts a csv file that contains raw data to be cleaned and va
 
 <img src='images/pipeline.png' width='800' alt='pipeline'>
 
-The data is first read from the input **csv** file and loaded into a Pandas data frame. Since the original raw data may consist of incomplete and non-validated data, Python is used for data cleaning, completion, and validation. The results are then stored in PostgresSQL.
+The data is first read from the input **csv** file and loaded into a Pandas data frame. Since the original raw data may contain incomplete and non-validated data, Python is used for data cleaning, completion, and validation. The results are then stored in PostgresSQL.
 
 # Future Considerations
 <a id="future"></a>
-__to_sql__ method is the bottleneck of the project now. It takes around 10 - 15 mins to be loaded in to database after the data cleaning.
+Pandas' __to_sql__ method that loads the data frame to the database table is the bottleneck of the project. This process takes around 10 - 15 mins.
 
-Possible alternative approaches to mitigate the mentioned bottleneck may be to use __pd.io__ or PostgresSQL's __COPY__ command, or ready-to-use libraries, such as __odo__ (http://odo.pydata.org/en/latest/perf.html).
+Possible alternative approaches to mitigate the mentioned bottleneck may be to use __pd.io__ library or PostgresSQL's __COPY__ command, or ready-to-use libraries, such as __odo__ (http://odo.pydata.org/en/latest/perf.html).
 
 
-PostgresSQL's __COPY__ function can be used if the cleaned and validated data is stored in a temporary csv file. This csv file can be then loaded into a database table with a matching schema provided in the csv file.
+PostgresSQL's __COPY__ function can be used if the cleaned data is temporarily stored in a csv file. This csv file can be then loaded into database with a matching schema provided in the csv file.
