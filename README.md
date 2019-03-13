@@ -30,7 +30,7 @@ LendingClub is a US peer-to-peer lending company, headquartered in San Francisco
 It was the first peer-to-peer lender to register its offerings as securities with
 the Securities and Exchange Commission, and to offer loan trading on a secondary market.<br>
 Lending Club is the world's largest peer-to-peer lending platform. <br>
-Lending Club enables borrowers to create unsecured personal loans between \\$1,000 and \\$40,000.<br>
+Lending Club enables borrowers to create unsecured personal loans between $1,000 and $40,000.<br>
 The standard loan period is three years.
 Investors can search and browse the loan listings on Lending Club website
 and select loans that they want to invest in based on the information supplied about the borrower,
@@ -115,7 +115,7 @@ Please use __run.sh__ shell script in the main folder to run the project.
 # Technology
 <a id="technology"></a>
 
-The project uses Python 3.7.2, Pandas 0.24.1, and PostgresSQL 11.2.
+The project uses Python 3.7.2, Pandas 0.24.1, SQLAlchemy 1.3.0, and PostgresSQL 11.2.
 
 # Data Pipeline
 <a id="data_pipeline"></a>
