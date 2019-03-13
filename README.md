@@ -14,10 +14,10 @@ The outline of the project is as follows:
     a.[What is Lending Club](#what_is)<br>
     b.[Working Principle](#working_principle)<br>
 2. [Dataset](#dataset)<br>
-3. [Findings from Data Analysis](data_analysis)<br>
-4. [Directory Structure](directories)<br>
-5. [How to run?](howtorun)<br>
-6. [Technology](technology)<br>
+3. [Findings from Data Analysis](#data_analysis)<br>
+4. [Directory Structure](#directories)<br>
+5. [How to run?](#howtorun)<br>
+6. [Technology](#technology)<br>
 7. [Data Pipeline](#data_pipeline)<br>
 8. [Future Considerations](#future)<br>
 
