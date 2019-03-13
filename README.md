@@ -15,12 +15,13 @@ The outline of the project is as follows:
     b.[Working Principle](#working_principle)<br>
 2. [Dataset](#dataset)<br>
 3. [Findings from Data Analysis](data_analysis)<br>
-4. [How to run?](hottorun)<br>
-5. [Technology](technology)<br>
-6. [Data Pipeline](#data_pipeline)<br>
-7. [Future Considerations](#future)<br>
+4. [Directory Structure](directories)<br>
+5. [How to run?](howtorun)<br>
+6. [Technology](technology)<br>
+7. [Data Pipeline](#data_pipeline)<br>
+8. [Future Considerations](#future)<br>
 
-# About the Lending Club:
+# About the Lending Club
 <a id="about"></a>
 
 ## What is Lending Club?
@@ -61,13 +62,13 @@ Below is the web interface of the Lending Club seen by an investor.
 Source: [Lending Club Review](https://www.lendacademy.com/lending-club-review/)
 
 
-# Dataset:
+# Dataset
 <a id="dataset"></a>
 The Lending Club Loan dataset ([Lending Club Loan Dataset](https://www.kaggle.com/wendykan/lending-club-loan-data)) has 74 columns.<br>
 These columns are described in the dictionary provided by Kaggle ([Lending Club Loan Dataset Dictionary](https://www.kaggle.com/wendykan/lending-club-loan-data#LCDataDictionary.xlsx)).<br>
 The first 10 rows of the dataset, some basic statistics, such as count, min, max, mean, standard deviation, and quantiles, of the columns with numeric values, and the loan dictionary are shown below for better understanding of each column.
 
-# Findings from Data Analysis:
+# Findings from Data Analysis
 <a id="data_analysis"></a>
 A data analysis for Lending Club Loans dataset can be found in the __analysis__ folder as a jupyter notebook file. The high-level finding of this analysis are provided as follow:
 
@@ -81,17 +82,42 @@ A data analysis for Lending Club Loans dataset can be found in the __analysis__ 
 
 <img src='images/finding_5.png' width='800' alt='pipeline'>
 
-# How to run?:
-<a id="howtorun"></a>
 
+# Directory Structure
+<a id="directories"></a>
+1. __src__ folder includes __app.py__ and __configuration.py__ scripts, and __db__, __etl__, and __logger__ subfolders
+  * The entry point of the application is __app.py__ script. When you run __run.sh__ shell script this is the first script that runs
+
+  * __configuration.py__ script stores the configuration used for database and logging operations
+
+  * __db__ folder contains
+    * __base_metadata_service.py__ script to be the base class of the database module
+
+    * __sql_metadata_service.py__ is the main database module that inherits the base metadata service and implements the necessary database operations, such as creating a SQLAlchemy engine and storing the cleaned data to database
+
+  * __etl__ folder contains
+    * __ETL.py__ script that performs data cleaning and validation operations.
+
+  * __logger__ folder contains
+    * __logger.py__ script for logging operations
+
+
+2. __analysis__ folder includes the jupyter notebook, __data_analysis_lending_club.ipynb__ that performs data analysis for data exploration.
+
+3. __logs__ folder stores log files
+
+4. __images__ folder includes images to be shown in the markdown readme document.
+
+# How to Run?
+<a id="howtorun"></a>
 Please use __run.sh__ shell script in the main folder to run the project.
 
-# Technology?:
+# Technology
 <a id="technology"></a>
 
 The project uses Python 3.7.2, Pandas 0.24.1, and PostgresSQL 11.2.
 
-# Data Pipeline?:
+# Data Pipeline
 <a id="data_pipeline"></a>
 The data pipeline consists of the input file (__loan.csv__) that is located in **input** folder, Python programming language for data cleaning and validation, and PostgresSQL to stored the cleaned and validated data.
 
@@ -99,7 +125,7 @@ The data pipeline consists of the input file (__loan.csv__) that is located in *
 
 The data is first read from the input **csv** file and loaded into a Pandas data frame. Since the original raw data may consist of incomplete and non-validated data, Python is used for data cleaning, completion, and validation. The results are then stored in PostgresSQL.
 
-# Future Considerations:
+# Future Considerations
 <a id="future"></a>
 __to_sql__ method is the bottleneck of the project now. It takes around 10 - 15 mins to be loaded in to database after the data cleaning.
 
