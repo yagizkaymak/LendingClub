@@ -19,7 +19,9 @@ The outline of the project is as follows:
 5. [How to run?](#howtorun)<br>
 6. [Technology](#technology)<br>
 7. [Data Pipeline](#data_pipeline)<br>
-8. [Future Considerations](#future)<br>
+8. [Future Considerations and Improvements](#future)<br>
+    a.[Future Work](#futurework)<br>
+    b.[Possible Improvements](#improvements)<br>
 
 # About the Lending Club
 <a id="about"></a>
@@ -131,8 +133,16 @@ The data pipeline accepts a csv file that contains raw data to be cleaned and va
 
 The data is first read from the input **csv** file and loaded into a Pandas data frame. Since the original raw data may contain incomplete and non-validated data, Python is used for data cleaning, completion, and validation. The results are then stored in PostgresSQL.
 
-# Future Considerations
+# Future Considerations and Improvement
 <a id="future"></a>
+
+## Future Work
+<a id="futurework"></a>
+Test cases have not been implemented. Test modules will be implemented.
+In addition to the existing data validation in the project, data validation tools, such as Valideer (https://github.com/podio/valideer), Cerberus (http://docs.python-cerberus.org/en/stable/), or Voluptuous (https://github.com/alecthomas/voluptuous).
+
+## Possible Improvements
+<a id="improvements"></a>
 Pandas' __to_sql__ method that loads the data frame to the database table is the bottleneck of the project. This process takes around 10 - 15 mins.
 
 Possible alternative approaches to mitigate the mentioned bottleneck may be to use __pd.io__ library or PostgresSQL's __COPY__ command, or ready-to-use libraries, such as __odo__ (http://odo.pydata.org/en/latest/perf.html).
